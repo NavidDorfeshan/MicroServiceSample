@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  Catalog_Api:
+    image: ${REGISTRY:-eshop}/catalogapi-${PLATFORM:-linux}-${TAG:-latest}
+    build:
+      context: .
+      dockerfile: Src/Services/Catalog/Catalog.Api/Dockerfile

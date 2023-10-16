@@ -1,0 +1,9 @@
+version: '3.4'
+
+services:
+  Catalog_Api:
+    env_file:
+     - catalog.env
+    ports:
+      - "5101:80"
+      - "9101:81" 
