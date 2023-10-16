@@ -14,3 +14,5 @@
 /.vs/MicroServiceSample/v17/.suo
 *.v2
 *.exe
+*.targets
+*.editorconfig

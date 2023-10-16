@@ -1,3 +1,6 @@
+using Common.Loggin;
+using Serilog;
+
 var configuration = GetConfiguration();
 var host = CreateHostBuilder(configuration,args);
 
@@ -33,5 +36,12 @@ IHost CreateHostBuilder(IConfiguration configuration, string[] args) =>
                 .ConfigureAppConfiguration(x => x.AddConfiguration(configuration))
                 .CaptureStartupErrors(false);
         })
-
+        .UseSerilog(SeriLogger.configuration)
         .Build();
+
+public partial class program
+{
+    public static string? NameSpace = typeof(Startup).Namespace; 
+    public static string? AppName = "Catalog.Api";
+
+}
