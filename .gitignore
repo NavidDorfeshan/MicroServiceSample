@@ -1,0 +1,16 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+*.dll
+*.vsidx
+*.pdb
+*.json
+*.props
+*.cache
+*.cs
+*.txt
+*.BuildWithSkipAnalyzers
+/.vs/MicroServiceSample/v17/.suo
+*.v2
+*.exe
