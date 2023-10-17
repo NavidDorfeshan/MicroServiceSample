@@ -1,5 +1,3 @@
-using Common.Loggin;
-using Serilog;
 
 var configuration = GetConfiguration();
 var host = CreateHostBuilder(configuration,args);
@@ -24,13 +22,6 @@ IHost CreateHostBuilder(IConfiguration configuration, string[] args) =>
         .ConfigureWebHostDefaults(webBuilder =>
         {
             webBuilder.UseStartup<Startup>()
-                //.ConfigureKestrel(options =>
-                //{
-                //    options.Listen(IPAddress.Any, 80, listenOptions =>
-                //    {
-                //        listenOptions.Protocols = HttpProtocols.Http1AndHttp2;
-                //    });
-                //})
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseWebRoot("Pics")
                 .ConfigureAppConfiguration(x => x.AddConfiguration(configuration))

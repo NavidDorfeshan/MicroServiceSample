@@ -1,13 +1,10 @@
-﻿using Microsoft.Extensions.Hosting;
-using Serilog;
-using Serilog.Formatting.Compact;
-
-namespace Common.Loggin
+﻿namespace Common.Loggin
 {
     public static class SeriLogger
     {
         public static Action<HostBuilderContext, LoggerConfiguration> configuration => (context, logConfiguration) =>
         {
+
             var seqServerUrl = context.Configuration["SeqServerUrl"];
             var logStashUrl = context.Configuration["LogStashUrl"];
 
