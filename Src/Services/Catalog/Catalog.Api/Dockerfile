@@ -8,8 +8,10 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["MicroServiceSample.sln", "MicroServiceSample.sln"]
-COPY ["BuildingBlocks/Logging/Common.Loggin.csproj", "BuildingBlocks/Logging/"]
 COPY ["Services/Catalog/Catalog.Api/Catalog.Api.csproj", "Services/Catalog/Catalog.Api/"]
+COPY ["BuildingBlocks/Logging/Common.Loggin/Common.Loggin.csproj", "BuildingBlocks/Logging/Common.Loggin/"]
+COPY ["BuildingBlocks/Host/Common.Host/Common.Host.csproj", "BuildingBlocks/Host/Common.Host/"]
+
 #RUN dotnet restore "Catalog.Api/Catalog.Api.csproj"
 COPY "docker-compose.dcproj" "docker-compose.dcproj"
 COPY "Nuget.config" "Nuget.config"

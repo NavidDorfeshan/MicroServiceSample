@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\Host\Common.Host\Common.Host.csproj" />
     <ProjectReference Include="..\..\..\BuildingBlocks\Logging\Common.Loggin\Common.Loggin.csproj" />
   </ItemGroup>
 

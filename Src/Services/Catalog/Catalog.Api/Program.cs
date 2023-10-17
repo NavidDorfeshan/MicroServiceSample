@@ -1,8 +1,31 @@
 
-var configuration = GetConfiguration();
-var host = CreateHostBuilder(configuration,args);
+using Common.Host;
 
-host.Run();
+var configuration = GetConfiguration();
+
+try
+{
+    var host = CreateHostBuilder(configuration, args);
+    Log.Information("Configuration webHost...",program.AppName);
+    Log.Information("applying Migration....",program.AppName);
+    host.MigrateDataBase<program>((services) =>
+    {
+        //var context = services.GetService<CatalogContext>();
+        //var env = services.GetService<IWebHostEnvironment>();
+        //var logger = services.GetRequiredService<ILogger<CatalogContextSeed>>();
+        //new CatalogContextSeed().MigrateAndSeedAsync(context,env,logger).Wait();
+    });
+
+    Log.Information("Starting webHost....", program.AppName);
+
+    host.Run();
+
+}
+catch (Exception e)
+{
+    Log.Fatal(e,"Host Terminated");
+}
+
 
 IConfiguration GetConfiguration()
 {

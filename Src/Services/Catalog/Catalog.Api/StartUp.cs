@@ -1,5 +1,4 @@
-﻿using Catalog.Api.Services;
-namespace Catalog.Api;
+﻿namespace Catalog.Api;
 public class Startup
 {
     public IConfiguration Configuration { get; }
@@ -9,7 +8,7 @@ public class Startup
     }
     public void ConfigureServices(IServiceCollection services)
     {
-        services.AddCustomMVC(Configuration).AddSwagger(Configuration);
+        services.AddCustomMVC(Configuration).AddSwagger(Configuration).AddCustomOptions(Configuration);
     }
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
     {
@@ -35,4 +34,6 @@ public class Startup
             endpoints.MapControllers();
         });
     }
+
 }
+
